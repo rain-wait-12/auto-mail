@@ -30,12 +30,12 @@ public class MailSender {
      * 初始化邮件发送对象
      * @return JavaMailSender
      */
-    private JavaMailSender getJavaMailSender(Properties paramProp) {
+    private JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
         javaMailSender.setHost(sendModel.getHost());
         javaMailSender.setUsername(sendModel.getUsername());
         javaMailSender.setPassword(sendModel.getPassword());
-        String portStr = paramProp.getProperty(sendModel.getPort());
+        String portStr = sendModel.getPort();
         if (StringUtils.isNotBlank(portStr)) {
             javaMailSender.setPort(Integer.parseInt(portStr));
         }
@@ -58,7 +58,7 @@ public class MailSender {
      */
      public JavaMailSender getJavaMail(){
         if(javaMailSender ==null){
-            this.javaMailSender = getJavaMailSender(null);
+            this.javaMailSender = getJavaMailSender();
         }
         return this.javaMailSender;
     }

@@ -12,34 +12,41 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author create by rain 2019-10
+ */
 @Component
 public class OptExcelUtils {
 
     @Resource
     MailConfig mailConfig;
-    
-    
+
+    /**
+     * 文件选择策略 选择最新得文件
+     * @return 文件名
+     */
     public String  getExcelName() {
 
         String path = mailConfig.getPath();
-        if(StringUtils.isNotEmpty(path)){
+        if(StringUtils.isEmpty(path)){
             try {
-                path =  ResourceUtils.getURL("classpath:")+ "\\excel";
+                path =  ResourceUtils.getURL("classpath:")+ "excel";
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
+
         File file = new File(path);
-        //String[] list = file.list();
 
         File[] files = file.listFiles();
+
         List<Long> list = new ArrayList<Long>();
         for (int i = 0; i < files.length; i++) {
             list.add(Long.decode(files[i].getName().replace(".xlsx","")));
         }
         System.out.println(list.toString());
         Collections.reverse(list);
-
+        System.out.println(list.get(0) + "--------------------------------------------+++++");
         return list.get(0) + "";
     }
 

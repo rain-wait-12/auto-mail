@@ -1,10 +1,14 @@
 package com.auto.mail.model;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
-import java.util.List;
-
+@Table(name = "auto_mail")
 public class AutoMailParameters {
 
+    @Id
+    private Integer id;
 
     /**
      * 发送者用户名
@@ -14,7 +18,7 @@ public class AutoMailParameters {
     /**
      * 接收者邮箱
      */
-    private List<String> receivers;
+    private String receivers;
 
     /**
      * 邮件主题
@@ -29,17 +33,24 @@ public class AutoMailParameters {
     /**
      * 附件地址
      */
+    @Transient
     private  String annexPath;
 
-    /**
-     * 发送者姓名
-     */
-    private String senderName;
+
 
     /**
      * 发件时间
      */
+    @Transient
     private Date sendDate;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -49,11 +60,11 @@ public class AutoMailParameters {
         this.username = username;
     }
 
-    public List<String> getReceivers() {
+    public String getReceivers() {
         return receivers;
     }
 
-    public void setReceivers(List<String> receivers) {
+    public void setReceivers(String receivers) {
         this.receivers = receivers;
     }
 
@@ -81,13 +92,7 @@ public class AutoMailParameters {
         this.annexPath = annexPath;
     }
 
-    public String getSenderName() {
-        return senderName;
-    }
 
-    public void setSenderName(String senderName) {
-        this.senderName = senderName;
-    }
 
     public Date getSendDate() {
         return sendDate;
