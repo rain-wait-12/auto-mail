@@ -1,4 +1,4 @@
-package com.auto.mail.crontab;
+package com.auto.mail.cron;
 
 import java.util.concurrent.ScheduledFuture;
 

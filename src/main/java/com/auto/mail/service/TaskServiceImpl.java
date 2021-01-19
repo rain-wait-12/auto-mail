@@ -1,8 +1,8 @@
 package com.auto.mail.service;
 
 import com.auto.mail.constant.Constant;
-import com.auto.mail.crontab.CronTaskRegistrar;
-import com.auto.mail.crontab.SchedulingRunnable;
+import com.auto.mail.cron.CronTaskRegistrar;
+import com.auto.mail.cron.SchedulingRunnable;
 import com.auto.mail.mapper.TaskMapper;
 import com.auto.mail.model.TaskInfo;
 import com.auto.mail.utils.CommonUtils;
@@ -52,6 +52,17 @@ public class TaskServiceImpl implements TaskService{
     @Override
     public List<TaskInfo> initTaskJob(TaskInfo taskInfo) {
         return taskMapper.selectByTaskDto(taskInfo);
+    }
+
+    @Override
+    public Object restartTaskJob(TaskInfo taskInfo) {
+        Object[] split = taskInfo.getParam().split(",");
+
+        SchedulingRunnable runnable = new SchedulingRunnable(taskInfo.getJobHandler(),
+                taskInfo.getJobName(),split
+                );
+        runnable.run();
+        return "success";
     }
 
     /**

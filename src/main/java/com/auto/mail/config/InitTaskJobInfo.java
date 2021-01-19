@@ -1,8 +1,8 @@
 package com.auto.mail.config;
 
 import com.auto.mail.constant.Constant;
-import com.auto.mail.crontab.CronTaskRegistrar;
-import com.auto.mail.crontab.SchedulingRunnable;
+import com.auto.mail.cron.CronTaskRegistrar;
+import com.auto.mail.cron.SchedulingRunnable;
 import com.auto.mail.mapper.DataSourceMapper;
 import com.auto.mail.model.TaskInfo;
 import com.auto.mail.service.TaskService;
@@ -51,11 +51,11 @@ public class InitTaskJobInfo {
 
 
         logger.info("task info  initialization starts");
+
         List<TaskInfo> taskInfos = taskService.initTaskJob(new TaskInfo());
 
-        taskInfos.forEach(task->{
-            addCronTask(task);
-        });
+        taskInfos.forEach(this::addCronTask);
+
         logger.info("task info  initialization end");
     }
 

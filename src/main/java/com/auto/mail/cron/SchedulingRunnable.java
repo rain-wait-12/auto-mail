@@ -1,4 +1,4 @@
-package com.auto.mail.crontab;
+package com.auto.mail.cron;
 
 import com.auto.mail.utils.SpringContextUtils;
 import org.slf4j.Logger;

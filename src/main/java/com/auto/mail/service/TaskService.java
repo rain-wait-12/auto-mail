@@ -14,4 +14,5 @@ public interface TaskService {
 
     List<TaskInfo> initTaskJob(TaskInfo taskInfo);
 
+    Object restartTaskJob(TaskInfo taskInfo);
 }

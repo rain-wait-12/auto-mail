@@ -1,7 +1,6 @@
-package com.auto.mail.crontab;
+package com.auto.mail.cron;
 
 import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.config.CronTask;
 

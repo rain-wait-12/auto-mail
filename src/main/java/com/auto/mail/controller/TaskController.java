@@ -2,6 +2,7 @@ package com.auto.mail.controller;
 
 
 import com.auto.mail.constant.BaseResponse;
+import com.auto.mail.cron.SchedulingRunnable;
 import com.auto.mail.model.TaskInfo;
 import com.auto.mail.service.TaskService;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ public class TaskController {
 
     @Resource
     private TaskService taskService;
+
 
     /**
      * 新增job
@@ -60,5 +62,14 @@ public class TaskController {
 
         return BaseResponse.successResponnse(taskService.initTaskJob(taskInfo));
     }
+    /**
+     * 执行job
+     * @param taskInfo 执行job
+     * @return baseResponse
+     */
+    @GetMapping("restart")
+    public BaseResponse restartTaskJob(@RequestBody TaskInfo taskInfo){
 
+        return BaseResponse.successResponnse(taskService.restartTaskJob(taskInfo));
+    }
 }
