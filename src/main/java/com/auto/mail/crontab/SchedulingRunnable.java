@@ -50,6 +50,7 @@ public class SchedulingRunnable implements Runnable {
         long times = System.currentTimeMillis() - startTime;
         logger.info("定时任务执行结束 - bean：{}，方法：{}，参数：{}，耗时：{} 毫秒", beanName, methodName, params, times);
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

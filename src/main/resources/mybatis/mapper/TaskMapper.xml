@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.auto.mail.mapper.TaskMapper">   <!--指定mapper位置-->
+
+    <select id="selectByTaskDto" resultType="com.auto.mail.model.TaskInfo">
+        select * from task_info
+
+        <where>
+           <if test="info.jobHandler != null and info.jobHandler != '' ">
+            and job_handler = #{info.jobHandler}
+           </if>
+           <if test="info.jobName != null and info.jobName != ''">
+               and job_name = #{info.name}
+           </if>
+            <if test="info.status != null and info.status != ''">
+                and status = #{info.status}
+            </if>
+            <if test="info.status = null or info.status = ''">
+                and status = '1'
+            </if>
+        </where>
+        <if test="info.limit != null and info.offset != null">
+            limit #{info.limit}  offset #{info.offset}
+        </if>
+    </select>
+
+    <delete id="deleteByIdKey">
+        delete from task_info where id = #{id}
+    </delete>
+
+</mapper>

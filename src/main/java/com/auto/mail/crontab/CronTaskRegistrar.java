@@ -7,6 +7,7 @@ import org.springframework.scheduling.config.CronTask;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -18,7 +19,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CronTaskRegistrar implements DisposableBean {
 
     private final Map<Runnable, ScheduledTask> scheduledTasks = new ConcurrentHashMap<>(16);
-    @Autowired
+
+    @Resource
     private TaskScheduler taskScheduler;
 
     public TaskScheduler getScheduler() {
@@ -50,11 +52,13 @@ public class CronTaskRegistrar implements DisposableBean {
         if (scheduledTask != null)
             scheduledTask.cancel();
     }
+
     public ScheduledTask scheduleCronTask(CronTask cronTask) {
         ScheduledTask scheduledTask = new ScheduledTask();
         scheduledTask.future = this.taskScheduler.schedule(cronTask.getRunnable(), cronTask.getTrigger());
         return scheduledTask;
     }
+
     @Override
     public void destroy() {
         for (ScheduledTask task : this.scheduledTasks.values()) {
