@@ -1,5 +1,7 @@
 package com.auto.mail.cron;
 
+import com.auto.mail.constant.Constant;
+import com.auto.mail.model.TaskInfo;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.config.CronTask;
@@ -17,37 +19,55 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class CronTaskRegistrar implements DisposableBean {
 
-    private final Map<Runnable, ScheduledTask> scheduledTasks = new ConcurrentHashMap<>(16);
+    /**
+     * 调度任务集
+     *
+     * 新增 更新 或者 移除task  都对任务调度集进行更新
+     *
+     */
+    private final Map<String, ScheduledTask> scheduledTasks = new ConcurrentHashMap<>(21);
 
+    /**
+     * 任务调度器
+     */
     @Resource
     private TaskScheduler taskScheduler;
 
     public TaskScheduler getScheduler() {
         return this.taskScheduler;
     }
+
+
+    /**
+     *
+     * @param taskInfo 任务信息
+     */
+    public void addTask(TaskInfo taskInfo){
+        //初始化定时任务实例
+        Object[] split = taskInfo.getParam().split(",");
+        SchedulingRunnable task = new SchedulingRunnable(taskInfo.getJobHandler(), Constant.JOB_EXECUTE_METHOD, split);
+        addCronTask(task, taskInfo);
+    }
+
     /**
      * 新增定时任务
-     * @param task
-     * @param cronExpression
+     * @param runnable runnable
+     * @param taskInfo task info
      */
-    public void addCronTask(Runnable task, String cronExpression) {
-        addCronTask(new CronTask(task, cronExpression));
-    }
-    public void addCronTask(CronTask cronTask) {
-        if (cronTask != null) {
-            Runnable task = cronTask.getRunnable();
-            if (this.scheduledTasks.containsKey(task)) {
-                removeCronTask(task);
-            }
-            this.scheduledTasks.put(task, scheduleCronTask(cronTask));
+    public void addCronTask(Runnable runnable,TaskInfo taskInfo) {
+        CronTask cronTask = new CronTask(runnable, taskInfo.getCron());
+
+        if (this.scheduledTasks.containsKey(taskInfo.getId())) {
+            removeCronTask(taskInfo.getId());
         }
+        this.scheduledTasks.put(taskInfo.getId(), scheduleCronTask(cronTask));
     }
     /**
      * 移除定时任务
-     * @param task
+     * @param taskKey
      */
-    public void removeCronTask(Runnable task) {
-        ScheduledTask scheduledTask = this.scheduledTasks.remove(task);
+    public void removeCronTask(String taskKey) {
+        ScheduledTask scheduledTask = this.scheduledTasks.remove(taskKey);
         if (scheduledTask != null)
             scheduledTask.cancel();
     }

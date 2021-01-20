@@ -1,10 +1,11 @@
-package com.auto.mail.service;
+package com.auto.mail.service.impl;
 
 import com.auto.mail.constant.Constant;
 import com.auto.mail.cron.CronTaskRegistrar;
 import com.auto.mail.cron.SchedulingRunnable;
 import com.auto.mail.mapper.TaskMapper;
 import com.auto.mail.model.TaskInfo;
+import com.auto.mail.service.TaskService;
 import com.auto.mail.utils.CommonUtils;
 import org.springframework.scheduling.config.CronTask;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Component
-public class TaskServiceImpl implements TaskService{
+public class TaskServiceImpl implements TaskService {
 
     @Resource
     private TaskMapper taskMapper;
@@ -28,7 +29,8 @@ public class TaskServiceImpl implements TaskService{
         taskMapper.insert(taskInfo);
 
         //job 注册
-        addCronTask(taskInfo);
+        //addCronTask(taskInfo);
+        cronTaskRegistrar.addTask(taskInfo);
 
     }
 
@@ -38,7 +40,8 @@ public class TaskServiceImpl implements TaskService{
         taskMapper.updateByPrimaryKey(taskInfo);
 
         //重新注册
-        addCronTask(taskInfo);
+        //addCronTask(taskInfo);
+        cronTaskRegistrar.addTask(taskInfo);
     }
 
     @Override
@@ -46,7 +49,8 @@ public class TaskServiceImpl implements TaskService{
         //删除job
         taskMapper.deleteByIdKey(taskInfo.getId());
         //清除job
-        removeCronTask(taskInfo);
+        //removeCronTask(taskInfo);
+        cronTaskRegistrar.removeCronTask(taskInfo.getId());
     }
 
     @Override
@@ -65,24 +69,4 @@ public class TaskServiceImpl implements TaskService{
         return "success";
     }
 
-    /**
-     * 注册任务
-     * @param taskInfo job参数
-     */
-    private void addCronTask(TaskInfo taskInfo){
-        //初始化定时任务实例
-        SchedulingRunnable task = new SchedulingRunnable(taskInfo.getJobHandler(), Constant.JOB_EXECUTE_METHOD, taskInfo.getId());
-        cronTaskRegistrar.addCronTask(task, taskInfo.getCron());
-    }
-
-    /**
-     * 删除任务
-     * @param taskInfo job参数
-     */
-    private void removeCronTask(TaskInfo taskInfo){
-        //初始化定时任务实例
-        SchedulingRunnable task = new SchedulingRunnable(taskInfo.getJobHandler(), Constant.JOB_EXECUTE_METHOD, taskInfo.getId());
-        CronTask cronTask = new CronTask(task, taskInfo.getCron());
-        cronTaskRegistrar.removeCronTask(cronTask.getRunnable());
-    }
 }

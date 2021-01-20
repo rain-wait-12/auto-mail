@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:maven" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8124862a-f9d9-4903-b85b-ba62ef4484f2" name="Default Changelist" comment="Task Job add api restart">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/auto/mail/config/CronValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/auto/mail/config/DateTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/auto/mail/cron/CronTaskRegistrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auto/mail/cron/CronTaskRegistrar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/auto/mail/model/TaskInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auto/mail/model/TaskInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/auto/mail/service/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auto/mail/service/impl/TaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/content.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/content.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="AnnotationType" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1nHHnWOQpvoBMsKZV7gTpqz0fPH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.auto.mail.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workSpace\rain\auto-mail\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="auto-task" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.auto.mail.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8124862a-f9d9-4903-b85b-ba62ef4484f2" name="Default Changelist" comment="" />
+      <created>1611040262235</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611040262235</updated>
+      <workItem from="1611040263803" duration="8273000" />
+      <workItem from="1611050276231" duration="599000" />
+      <workItem from="1611051075583" duration="18177000" />
+    </task>
+    <task id="LOCAL-00001" summary="Task Job first commit">
+      <created>1611054201946</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611054201946</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Task Job add api restart">
+      <created>1611055210767</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611055210767</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Task Job first commit" />
+    <MESSAGE value="Task Job add api restart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task Job add api restart" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="753" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1611054435898">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="753" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1611054435898" />
+    <state x="605" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1611051941460">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="605" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611051941460" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1611045324072">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611045324072" />
+    <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1611050110889">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1611050110889" />
+    <state width="410" height="439" key="Git.Branch.Popup" timestamp="1611041991689">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="410" height="439" key="Git.Branch.Popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611041991689" />
+    <state x="490" y="175" key="Maven.ArtifactSearchDialog" timestamp="1611129908482">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="175" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611129908482" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1611055222565">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611055222565" />
+    <state x="753" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611041980403">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="753" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611041980403" />
+    <state x="334" y="180" key="new project wizard" timestamp="1611050124936">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="334" y="180" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1611050124936" />
+  </component>
+</project>
